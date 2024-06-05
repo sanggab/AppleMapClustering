@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF17D52E2C0FEEE5007E2850 /* ProfileAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF17D52D2C0FEEE5007E2850 /* ProfileAnnotationView.swift */; };
 		EFD4325A2C0E999B00E39758 /* AppleMapClusteringApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD432592C0E999B00E39758 /* AppleMapClusteringApp.swift */; };
 		EFD4325C2C0E999B00E39758 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD4325B2C0E999B00E39758 /* ContentView.swift */; };
 		EFD4325E2C0E999C00E39758 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFD4325D2C0E999C00E39758 /* Assets.xcassets */; };
@@ -14,6 +15,12 @@
 		EFD4326B2C0E999D00E39758 /* AppleMapClusteringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD4326A2C0E999D00E39758 /* AppleMapClusteringTests.swift */; };
 		EFD432752C0E999D00E39758 /* AppleMapClusteringUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD432742C0E999D00E39758 /* AppleMapClusteringUITests.swift */; };
 		EFD432772C0E999D00E39758 /* AppleMapClusteringUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD432762C0E999D00E39758 /* AppleMapClusteringUITestsLaunchTests.swift */; };
+		EFD432842C0E9AD600E39758 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD432832C0E9AD600E39758 /* MapViewRepresentable.swift */; };
+		EFD432872C0EAC0100E39758 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EFD432862C0EAC0100E39758 /* SnapKit */; };
+		EFD4328A2C0EAC0F00E39758 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = EFD432892C0EAC0F00E39758 /* Then */; };
+		EFD4328C2C0EDA8E00E39758 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD4328B2C0EDA8E00E39758 /* Person.swift */; };
+		EFD432942C0EE49D00E39758 /* MapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD432932C0EE49D00E39758 /* MapData.swift */; };
+		EFD432982C0EFB9F00E39758 /* Data.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFD432972C0EFB9F00E39758 /* Data.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EF17D52D2C0FEEE5007E2850 /* ProfileAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileAnnotationView.swift; path = AppleMapClustering/AnnotationView/ProfileAnnotationView.swift; sourceTree = SOURCE_ROOT; };
 		EFD432562C0E999B00E39758 /* AppleMapClustering.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleMapClustering.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFD432592C0E999B00E39758 /* AppleMapClusteringApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMapClusteringApp.swift; sourceTree = "<group>"; };
 		EFD4325B2C0E999B00E39758 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +52,10 @@
 		EFD432702C0E999D00E39758 /* AppleMapClusteringUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppleMapClusteringUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFD432742C0E999D00E39758 /* AppleMapClusteringUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMapClusteringUITests.swift; sourceTree = "<group>"; };
 		EFD432762C0E999D00E39758 /* AppleMapClusteringUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMapClusteringUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EFD432832C0E9AD600E39758 /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
+		EFD4328B2C0EDA8E00E39758 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		EFD432932C0EE49D00E39758 /* MapData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapData.swift; sourceTree = "<group>"; };
+		EFD432972C0EFB9F00E39758 /* Data.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Data.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +63,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFD432872C0EAC0100E39758 /* SnapKit in Frameworks */,
+				EFD4328A2C0EAC0F00E39758 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,10 +108,13 @@
 		EFD432582C0E999B00E39758 /* AppleMapClustering */ = {
 			isa = PBXGroup;
 			children = (
-				EFD432592C0E999B00E39758 /* AppleMapClusteringApp.swift */,
-				EFD4325B2C0E999B00E39758 /* ContentView.swift */,
-				EFD4325D2C0E999C00E39758 /* Assets.xcassets */,
+				EFD4329A2C0F071300E39758 /* Model */,
 				EFD4325F2C0E999C00E39758 /* Preview Content */,
+				EFD432992C0F06FB00E39758 /* Utils */,
+				EFD4328E2C0EE0AF00E39758 /* AnnotationView */,
+				EFD4329B2C0F072100E39758 /* Representable */,
+				EFD4325B2C0E999B00E39758 /* ContentView.swift */,
+				EFD432592C0E999B00E39758 /* AppleMapClusteringApp.swift */,
 			);
 			path = AppleMapClustering;
 			sourceTree = "<group>";
@@ -127,6 +144,40 @@
 			path = AppleMapClusteringUITests;
 			sourceTree = "<group>";
 		};
+		EFD4328E2C0EE0AF00E39758 /* AnnotationView */ = {
+			isa = PBXGroup;
+			children = (
+				EF17D52D2C0FEEE5007E2850 /* ProfileAnnotationView.swift */,
+			);
+			path = AnnotationView;
+			sourceTree = "<group>";
+		};
+		EFD432992C0F06FB00E39758 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EFD432972C0EFB9F00E39758 /* Data.plist */,
+				EFD4325D2C0E999C00E39758 /* Assets.xcassets */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		EFD4329A2C0F071300E39758 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EFD4328B2C0EDA8E00E39758 /* Person.swift */,
+				EFD432932C0EE49D00E39758 /* MapData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EFD4329B2C0F072100E39758 /* Representable */ = {
+			isa = PBXGroup;
+			children = (
+				EFD432832C0E9AD600E39758 /* MapViewRepresentable.swift */,
+			);
+			path = Representable;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +194,10 @@
 			dependencies = (
 			);
 			name = AppleMapClustering;
+			packageProductDependencies = (
+				EFD432862C0EAC0100E39758 /* SnapKit */,
+				EFD432892C0EAC0F00E39758 /* Then */,
+			);
 			productName = AppleMapClustering;
 			productReference = EFD432562C0E999B00E39758 /* AppleMapClustering.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +270,10 @@
 				Base,
 			);
 			mainGroup = EFD4324D2C0E999B00E39758;
+			packageReferences = (
+				EFD432852C0EAC0100E39758 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				EFD432882C0EAC0F00E39758 /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			productRefGroup = EFD432572C0E999B00E39758 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFD432982C0EFB9F00E39758 /* Data.plist in Resources */,
 				EFD432612C0E999C00E39758 /* Preview Assets.xcassets in Resources */,
 				EFD4325E2C0E999C00E39758 /* Assets.xcassets in Resources */,
 			);
@@ -258,6 +318,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFD4325C2C0E999B00E39758 /* ContentView.swift in Sources */,
+				EFD432842C0E9AD600E39758 /* MapViewRepresentable.swift in Sources */,
+				EFD432942C0EE49D00E39758 /* MapData.swift in Sources */,
+				EFD4328C2C0EDA8E00E39758 /* Person.swift in Sources */,
+				EF17D52E2C0FEEE5007E2850 /* ProfileAnnotationView.swift in Sources */,
 				EFD4325A2C0E999B00E39758 /* AppleMapClusteringApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,7 +411,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -404,7 +468,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -588,6 +652,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EFD432852C0EAC0100E39758 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		EFD432882C0EAC0F00E39758 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EFD432862C0EAC0100E39758 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFD432852C0EAC0100E39758 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		EFD432892C0EAC0F00E39758 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFD432882C0EAC0F00E39758 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EFD4324E2C0E999B00E39758 /* Project object */;
 }
