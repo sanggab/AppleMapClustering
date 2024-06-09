@@ -1,8 +1,8 @@
 //
-//  ProfileAnnotationView.swift
+//  MyProfileAnnotationView.swift
 //  AppleMapClustering
 //
-//  Created by Gab on 2024/06/04.
+//  Created by Gab on 2024/06/05.
 //
 
 import UIKit
@@ -12,8 +12,8 @@ import SnapKit
 import Then
 import Kingfisher
 
-class ProfileAnnotationView: MKAnnotationView {
-    static let identifier: String = "ProfileAnnotationView"
+class MyProfileAnnotationView: MKAnnotationView {
+    static let identifier: String = "MyProfileAnnotationView"
     
     private var mainView: UIView = UIView().then {
         $0.backgroundColor = .white
@@ -79,9 +79,6 @@ class ProfileAnnotationView: MKAnnotationView {
     public func configure(info person: Person) {
 //        profileImageView.image = UIImage(named: "도화가\(person.number)")
         profileImageView.kf.setImage(with: URL(string: person.url))
-//        KingfisherManager.shared.cache.clearMemoryCache()
-//        KingfisherManager.shared.cache.clearDiskCache()
-//        KingfisherManager.shared.cache.cleanExpiredDiskCache()
     }
     
     override func prepareForDisplay() {
@@ -106,6 +103,5 @@ class ProfileAnnotationView: MKAnnotationView {
     override func prepareForReuse() {
         super.prepareForReuse()
         profileImageView.image = nil
-        KingfisherManager.shared.cache.clearCache()
     }
 }

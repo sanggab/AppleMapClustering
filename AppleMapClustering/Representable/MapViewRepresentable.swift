@@ -10,6 +10,8 @@ import SwiftUI
 import MapKit
 import SnapKit
 import Then
+import Alamofire
+import SwiftyJSON
 
 struct MapViewRepresentable: UIViewRepresentable {
     func makeUIView(context: Context) -> some UIView {
@@ -25,6 +27,7 @@ struct MapViewRepresentable: UIViewRepresentable {
 //        mapView.register(CustomMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultClusterAnnotationViewReuseIdentifier)
         mapView.register(ProfileAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         mapView.register(ProfileAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultClusterAnnotationViewReuseIdentifier)
+        mapView.register(MyProfileAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultClusterAnnotationViewReuseIdentifier)
         
         guard let plistURL = Bundle.main.url(forResource: "Data", withExtension: "plist") else {
             fatalError("Failed to resolve URL for `Data.plist` in bundle.")
@@ -65,6 +68,14 @@ struct MapViewRepresentable: UIViewRepresentable {
             } else {
                 return nil
             }
+            
+//            guard let annotation = annotation as? Person else { return nil }
+//            
+//            if annotation.memNo == -100 {
+//                
+//            } else {
+//                
+//            }
             
         }
     }

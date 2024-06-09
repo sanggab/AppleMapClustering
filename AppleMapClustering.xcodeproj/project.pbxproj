@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		EF17D52E2C0FEEE5007E2850 /* ProfileAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF17D52D2C0FEEE5007E2850 /* ProfileAnnotationView.swift */; };
+		EF17D5332C102733007E2850 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EF17D5322C102733007E2850 /* Kingfisher */; };
+		EF17D5362C10273B007E2850 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = EF17D5352C10273B007E2850 /* SwiftyJSON */; };
+		EF17D5392C102D4C007E2850 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EF17D5382C102D4C007E2850 /* Alamofire */; };
+		EF17D53B2C1040EB007E2850 /* MyProfileAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF17D53A2C1040EB007E2850 /* MyProfileAnnotationView.swift */; };
 		EFD4325A2C0E999B00E39758 /* AppleMapClusteringApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD432592C0E999B00E39758 /* AppleMapClusteringApp.swift */; };
 		EFD4325C2C0E999B00E39758 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD4325B2C0E999B00E39758 /* ContentView.swift */; };
 		EFD4325E2C0E999C00E39758 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFD4325D2C0E999C00E39758 /* Assets.xcassets */; };
@@ -42,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		EF17D52D2C0FEEE5007E2850 /* ProfileAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileAnnotationView.swift; path = AppleMapClustering/AnnotationView/ProfileAnnotationView.swift; sourceTree = SOURCE_ROOT; };
+		EF17D53A2C1040EB007E2850 /* MyProfileAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileAnnotationView.swift; sourceTree = "<group>"; };
 		EFD432562C0E999B00E39758 /* AppleMapClustering.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleMapClustering.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFD432592C0E999B00E39758 /* AppleMapClusteringApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMapClusteringApp.swift; sourceTree = "<group>"; };
 		EFD4325B2C0E999B00E39758 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,7 +68,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF17D5392C102D4C007E2850 /* Alamofire in Frameworks */,
+				EF17D5332C102733007E2850 /* Kingfisher in Frameworks */,
 				EFD432872C0EAC0100E39758 /* SnapKit in Frameworks */,
+				EF17D5362C10273B007E2850 /* SwiftyJSON in Frameworks */,
 				EFD4328A2C0EAC0F00E39758 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				EF17D52D2C0FEEE5007E2850 /* ProfileAnnotationView.swift */,
+				EF17D53A2C1040EB007E2850 /* MyProfileAnnotationView.swift */,
 			);
 			path = AnnotationView;
 			sourceTree = "<group>";
@@ -197,6 +206,9 @@
 			packageProductDependencies = (
 				EFD432862C0EAC0100E39758 /* SnapKit */,
 				EFD432892C0EAC0F00E39758 /* Then */,
+				EF17D5322C102733007E2850 /* Kingfisher */,
+				EF17D5352C10273B007E2850 /* SwiftyJSON */,
+				EF17D5382C102D4C007E2850 /* Alamofire */,
 			);
 			productName = AppleMapClustering;
 			productReference = EFD432562C0E999B00E39758 /* AppleMapClustering.app */;
@@ -273,6 +285,9 @@
 			packageReferences = (
 				EFD432852C0EAC0100E39758 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				EFD432882C0EAC0F00E39758 /* XCRemoteSwiftPackageReference "Then" */,
+				EF17D5312C102733007E2850 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				EF17D5342C10273B007E2850 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				EF17D5372C102D4C007E2850 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = EFD432572C0E999B00E39758 /* Products */;
 			projectDirPath = "";
@@ -318,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFD4325C2C0E999B00E39758 /* ContentView.swift in Sources */,
+				EF17D53B2C1040EB007E2850 /* MyProfileAnnotationView.swift in Sources */,
 				EFD432842C0E9AD600E39758 /* MapViewRepresentable.swift in Sources */,
 				EFD432942C0EE49D00E39758 /* MapData.swift in Sources */,
 				EFD4328C2C0EDA8E00E39758 /* Person.swift in Sources */,
@@ -654,6 +670,30 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		EF17D5312C102733007E2850 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
+		EF17D5342C10273B007E2850 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
+		EF17D5372C102D4C007E2850 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
 		EFD432852C0EAC0100E39758 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -673,6 +713,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		EF17D5322C102733007E2850 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF17D5312C102733007E2850 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		EF17D5352C10273B007E2850 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF17D5342C10273B007E2850 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		EF17D5382C102D4C007E2850 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF17D5372C102D4C007E2850 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		EFD432862C0EAC0100E39758 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EFD432852C0EAC0100E39758 /* XCRemoteSwiftPackageReference "SnapKit" */;

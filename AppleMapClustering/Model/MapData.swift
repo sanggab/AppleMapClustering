@@ -8,7 +8,7 @@
 import MapKit
 import CoreLocation
 
-struct MapData: Decodable {
+struct MapData: Decodable, Equatable {
     let people: [Person]
 
     let centerLatitude: CLLocationDegrees
