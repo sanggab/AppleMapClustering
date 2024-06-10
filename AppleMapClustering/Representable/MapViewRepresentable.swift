@@ -32,39 +32,19 @@ struct MapViewRepresentable: UIViewRepresentable {
         mapView.register(MyProfileAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultClusterAnnotationViewReuseIdentifier)
         mapView.register(MyProfileAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         
-        
-        Task {
-            let response = await AF.request(URL(string: "https://devapi-nadiu12.honeymatchs.com/api/v2/map/test/20000")!, method: .post).serializingData().response
-            
-            switch response.result {
-            case .success(let result):
-                let json = JSON(result)
-                let person: [Person] = try JSONDecoder().decode([Person].self, from: json.rawData())
-                
-                var slice = Array(person.prefix(1000))
-                slice.insert(Person(latitude: 35.1595454, longitude: 126.8526012, url: "https://upload3.inven.co.kr/upload/2023/11/21/bbs/i16506236397.png", memNo: -100), at: 0)
-                slice.insert(Person(latitude: 35.1995454, longitude: 126.8526012, url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Kdt054rNtjzZUa6FnHDuJ7JfTF_od5rTsA&s", memNo: -101), at: 1)
-                
-                mapView.addAnnotations(slice)
-                
-            case .failure(let error):
-                print("error : \(error.localizedDescription)")
-            }
+        guard let plistURL = Bundle.main.url(forResource: "Data", withExtension: "plist") else {
+            fatalError("Failed to resolve URL for `Data.plist` in bundle.")
         }
-        
-//        guard let plistURL = Bundle.main.url(forResource: "Data", withExtension: "plist") else {
-//            fatalError("Failed to resolve URL for `Data.plist` in bundle.")
-//        }
-//
-//        do {
-//            let plistData = try Data(contentsOf: plistURL)
-//            let decoder = PropertyListDecoder()
-//            let decodedData = try decoder.decode(MapData.self, from: plistData)
-//            mapView.region = decodedData.region
-//            mapView.addAnnotations(decodedData.people)
-//        } catch {
-//            fatalError("Failed to load provided data, error: \(error.localizedDescription)")
-//        }
+
+        do {
+            let plistData = try Data(contentsOf: plistURL)
+            let decoder = PropertyListDecoder()
+            let decodedData = try decoder.decode(MapData.self, from: plistData)
+            mapView.region = decodedData.region
+            mapView.addAnnotations(decodedData.people)
+        } catch {
+            fatalError("Failed to load provided data, error: \(error.localizedDescription)")
+        }
         
         return mapView
     }
