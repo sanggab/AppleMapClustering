@@ -16,10 +16,10 @@ class ProfileAnnotationView: MKAnnotationView {
     static let identifier: String = "ProfileAnnotationView"
     
     private var mainView: UIView = UIView().then {
-        $0.backgroundColor = .white
-        $0.layer.cornerRadius = 20
-        $0.layer.borderWidth = 2
-        $0.layer.borderColor = UIColor.systemPink.cgColor
+        $0.backgroundColor = .clear
+//        $0.layer.cornerRadius = 20
+//        $0.layer.borderWidth = 2
+//        $0.layer.borderColor = UIColor.systemPink.cgColor
         $0.clipsToBounds = true
     }
     
@@ -29,23 +29,21 @@ class ProfileAnnotationView: MKAnnotationView {
     
 //    override var annotation: MKAnnotation? {
 //        willSet {
-//            if let annotation = newValue as? Person {
-//                print("모모")
-//                clusteringIdentifier = ClusterID.id
-//                configure(info: annotation)
+//            if let cluster = annotation as? MKClusterAnnotation {
+//                clusteringIdentifier = "cluster"
 //            } else {
-//                print("아니아니")
+//                clusteringIdentifier = "marker"
 //            }
 //        }
 //    }
     
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
-        
+        clusteringIdentifier = "profile"
         collisionMode = .circle
         
-        frame = CGRect(x: 0, y: 0, width: 80, height: 80)
-        centerOffset = CGPoint(x: 0, y: -40)
+        frame = CGRect(x: 0, y: 0, width: 62, height: 62)
+        centerOffset = CGPoint(x: 0, y: -10)
         
         setUI()
     }
@@ -68,7 +66,7 @@ class ProfileAnnotationView: MKAnnotationView {
     
     private func setConstraints() {
         mainView.snp.makeConstraints {
-            $0.size.equalTo(40)
+            $0.size.equalTo(62)
         }
         
         profileImageView.snp.makeConstraints {
@@ -77,18 +75,16 @@ class ProfileAnnotationView: MKAnnotationView {
     }
     
     public func configure(info person: Person) {
-//        profileImageView.image = UIImage(named: "도화가\(person.number)")
         profileImageView.kf.setImage(with: URL(string: person.url))
-//        KingfisherManager.shared.cache.clearMemoryCache()
-//        KingfisherManager.shared.cache.clearDiskCache()
-//        KingfisherManager.shared.cache.cleanExpiredDiskCache()
+        mainView.layer.cornerRadius = 31
+        mainView.layer.borderWidth = 2
+        mainView.layer.borderColor = UIColor.systemPink.cgColor
     }
     
     override func prepareForDisplay() {
         super.prepareForDisplay()
         
         displayPriority = .defaultLow
-//        configure(info: person)
         
         if let clusterAnnotation = annotation as? MKClusterAnnotation {
             let annotations = clusterAnnotation.memberAnnotations
@@ -98,14 +94,15 @@ class ProfileAnnotationView: MKAnnotationView {
             }
         } else {
             if let person = annotation as? Person {
-                configure(info: person)
-            }
+                configure(info: person)            }
         }
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         profileImageView.image = nil
-        KingfisherManager.shared.cache.clearCache()
+        mainView.layer.cornerRadius = 0
+        mainView.layer.borderWidth = 0
+        mainView.layer.borderColor = UIColor.clear.cgColor
     }
 }

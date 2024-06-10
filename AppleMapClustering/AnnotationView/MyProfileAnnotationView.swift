@@ -16,10 +16,10 @@ class MyProfileAnnotationView: MKAnnotationView {
     static let identifier: String = "MyProfileAnnotationView"
     
     private var mainView: UIView = UIView().then {
-        $0.backgroundColor = .white
-        $0.layer.cornerRadius = 20
-        $0.layer.borderWidth = 2
-        $0.layer.borderColor = UIColor.systemPink.cgColor
+        $0.backgroundColor = .clear
+//        $0.layer.cornerRadius = 20
+//        $0.layer.borderWidth = 2
+//        $0.layer.borderColor = UIColor.systemPink.cgColor
         $0.clipsToBounds = true
     }
     
@@ -41,11 +41,11 @@ class MyProfileAnnotationView: MKAnnotationView {
     
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
-        
+        clusteringIdentifier = "myProfile"
         collisionMode = .circle
         
-        frame = CGRect(x: 0, y: 0, width: 80, height: 80)
-        centerOffset = CGPoint(x: 0, y: -40)
+        frame = CGRect(x: 0, y: 0, width: 62, height: 62)
+        centerOffset = CGPoint(x: 0, y: -10)
         
         setUI()
     }
@@ -68,7 +68,7 @@ class MyProfileAnnotationView: MKAnnotationView {
     
     private func setConstraints() {
         mainView.snp.makeConstraints {
-            $0.size.equalTo(40)
+            $0.size.equalTo(62)
         }
         
         profileImageView.snp.makeConstraints {
@@ -77,16 +77,16 @@ class MyProfileAnnotationView: MKAnnotationView {
     }
     
     public func configure(info person: Person) {
-//        profileImageView.image = UIImage(named: "도화가\(person.number)")
         profileImageView.kf.setImage(with: URL(string: person.url))
+        mainView.layer.cornerRadius = 31
+        mainView.layer.borderWidth = 2
+        mainView.layer.borderColor = UIColor.systemPink.cgColor
     }
     
     override func prepareForDisplay() {
         super.prepareForDisplay()
         
         displayPriority = .defaultLow
-//        configure(info: person)
-        
         if let clusterAnnotation = annotation as? MKClusterAnnotation {
             let annotations = clusterAnnotation.memberAnnotations
             
@@ -103,5 +103,8 @@ class MyProfileAnnotationView: MKAnnotationView {
     override func prepareForReuse() {
         super.prepareForReuse()
         profileImageView.image = nil
+        mainView.layer.cornerRadius = 0
+        mainView.layer.borderWidth = 0
+        mainView.layer.borderColor = UIColor.clear.cgColor
     }
 }
