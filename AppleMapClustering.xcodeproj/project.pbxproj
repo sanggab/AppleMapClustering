@@ -25,6 +25,8 @@
 		EFD4328C2C0EDA8E00E39758 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD4328B2C0EDA8E00E39758 /* Person.swift */; };
 		EFD432942C0EE49D00E39758 /* MapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD432932C0EE49D00E39758 /* MapData.swift */; };
 		EFD432982C0EFB9F00E39758 /* Data.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFD432972C0EFB9F00E39758 /* Data.plist */; };
+		EFD4755D2C17C68400EC4DA7 /* ProfileSUView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD4755C2C17C68400EC4DA7 /* ProfileSUView.swift */; };
+		EFD4755F2C17C68C00EC4DA7 /* MyProfileSUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD4755E2C17C68C00EC4DA7 /* MyProfileSUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		EFD4328B2C0EDA8E00E39758 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		EFD432932C0EE49D00E39758 /* MapData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapData.swift; sourceTree = "<group>"; };
 		EFD432972C0EFB9F00E39758 /* Data.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Data.plist; sourceTree = "<group>"; };
+		EFD4755C2C17C68400EC4DA7 /* ProfileSUView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSUView.swift; sourceTree = "<group>"; };
+		EFD4755E2C17C68C00EC4DA7 /* MyProfileSUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileSUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +160,9 @@
 			isa = PBXGroup;
 			children = (
 				EF17D52D2C0FEEE5007E2850 /* ProfileAnnotationView.swift */,
+				EFD4755C2C17C68400EC4DA7 /* ProfileSUView.swift */,
 				EF17D53A2C1040EB007E2850 /* MyProfileAnnotationView.swift */,
+				EFD4755E2C17C68C00EC4DA7 /* MyProfileSUIView.swift */,
 			);
 			path = AnnotationView;
 			sourceTree = "<group>";
@@ -334,6 +340,8 @@
 			files = (
 				EFD4325C2C0E999B00E39758 /* ContentView.swift in Sources */,
 				EF17D53B2C1040EB007E2850 /* MyProfileAnnotationView.swift in Sources */,
+				EFD4755D2C17C68400EC4DA7 /* ProfileSUView.swift in Sources */,
+				EFD4755F2C17C68C00EC4DA7 /* MyProfileSUIView.swift in Sources */,
 				EFD432842C0E9AD600E39758 /* MapViewRepresentable.swift in Sources */,
 				EFD432942C0EE49D00E39758 /* MapData.swift in Sources */,
 				EFD4328C2C0EDA8E00E39758 /* Person.swift in Sources */,
