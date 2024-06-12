@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 import MapKit
 
 import SnapKit
@@ -14,71 +15,48 @@ import Kingfisher
 
 class ProfileAnnotationView: MKAnnotationView {
     static let identifier: String = "ProfileAnnotationView"
-    
-    private var mainView: UIView = UIView().then {
-        $0.backgroundColor = .clear
-//        $0.layer.cornerRadius = 20
-//        $0.layer.borderWidth = 2
-//        $0.layer.borderColor = UIColor.systemPink.cgColor
-        $0.clipsToBounds = true
-    }
-    
-    private var profileImageView: UIImageView = UIImageView().then {
-        $0.contentMode = .scaleToFill
-    }
-    
-//    override var annotation: MKAnnotation? {
-//        willSet {
-//            if let cluster = annotation as? MKClusterAnnotation {
-//                clusteringIdentifier = "cluster"
-//            } else {
-//                clusteringIdentifier = "marker"
-//            }
-//        }
-//    }
-    
+
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
         clusteringIdentifier = "profile"
-        collisionMode = .circle
+        collisionMode = .rectangle
         
-        frame = CGRect(x: 0, y: 0, width: 62, height: 62)
-        centerOffset = CGPoint(x: 0, y: -10)
+        frame = CGRect(x: 0, y: 0, width: getSize().width, height: getSize().height)
+        centerOffset = CGPoint(x: getSize().width / 2, y: getSize().height / 2)
         
-        setUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    private func setUI() {
-        setView()
-        setConstraints()
-    }
-    
-    private func setView() {
-        self.addSubview(mainView)
-        
-        mainView.addSubview(profileImageView)
-    }
-    
-    private func setConstraints() {
-        mainView.snp.makeConstraints {
-            $0.size.equalTo(62)
+    func getSize() -> CGSize {
+        if let clusterAnnotation = annotation as? MKClusterAnnotation {
+            let annotations = clusterAnnotation.memberAnnotations
+            
+            let digit: Int = String(annotations.count * 5).count
+//            print("digit: \(digit)")
+            let firstCondi: Int = 49
+            let borderWidth: Int = 3
+            let leadingPadding: Int = 2
+            
+            let common: Int = firstCondi + borderWidth + leadingPadding
+            
+            switch digit {
+            case 1:
+                return CGSize(width: common + 30, height: 66)
+            case 2:
+                return CGSize(width: common + 30, height: 66)
+            case 3:
+                return CGSize(width: common + 36, height: 66)
+            default:
+                return CGSize(width: common + 44, height: 66)
+            }
+            
+            
+        } else {
+            return CGSize(width: 66, height: 66)
         }
-        
-        profileImageView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
-    }
-    
-    public func configure(info person: Person) {
-        profileImageView.kf.setImage(with: URL(string: person.url))
-        mainView.layer.cornerRadius = 31
-        mainView.layer.borderWidth = 2
-        mainView.layer.borderColor = UIColor.systemPink.cgColor
     }
     
     override func prepareForDisplay() {
@@ -88,21 +66,21 @@ class ProfileAnnotationView: MKAnnotationView {
         
         if let clusterAnnotation = annotation as? MKClusterAnnotation {
             let annotations = clusterAnnotation.memberAnnotations
-            
             if let person = annotations.first as? Person {
-                configure(info: person)
+//                frame.size = getSize()
+                let vc: UIHostingController = UIHostingController(rootView: ProfileSUView(count: annotations.count, imageUrl: person.url))
+                self.addSubview(vc.view)
             }
         } else {
             if let person = annotation as? Person {
-                configure(info: person)            }
+//                frame.size = getSize()
+                let vc: UIHostingController = UIHostingController(rootView: ProfileSUView(count: 0, imageUrl: person.url))
+                self.addSubview(vc.view)
+            }
         }
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        profileImageView.image = nil
-        mainView.layer.cornerRadius = 0
-        mainView.layer.borderWidth = 0
-        mainView.layer.borderColor = UIColor.clear.cgColor
     }
 }

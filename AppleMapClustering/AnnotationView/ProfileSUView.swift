@@ -52,7 +52,7 @@ struct ProfileSUView: View {
             countView
                 .shadow(color: .black.opacity(0.24), radius: 4, x: 0, y: 2)
                 .alignmentGuide(HorizontalAlignment.center) { d in
-                    return d[HorizontalAlignment.leading] - 22
+                    return d[HorizontalAlignment.leading] - 21
                 }
                 .padding(.top, getTopPadding())
         }
@@ -119,6 +119,6 @@ struct ProfileSUView: View {
 }
 
 #Preview {
-    ProfileSUView(count: 1,
+    ProfileSUView(count: 1000,
                   imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRElZHHp5AzkFXd3DMEmSI0s2eiwaSjtkQ5NQ&s")
 }
