@@ -6,12 +6,11 @@
 //
 
 import SwiftUI
+import Combine
 import Alamofire
 import Kingfisher
 
 struct ContentView: View {
-    
-//    @State private var mapData: [Person] = []
     
     var body: some View {
         MapViewRepresentable()

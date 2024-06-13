@@ -40,13 +40,17 @@ struct ProfileSUView: View {
             
             Rectangle()
                 .fill(.mint)
-                .frame(width: 24, height: 16)
-                .cornerRadius(4)
+                .frame(width: 24, height: 24)
+                .mask {
+                    Rectangle()
+                        .frame(width: 24, height: 16)
+                        .cornerRadius(4)
+                }
                 .alignmentGuide(HorizontalAlignment.center) { d in
                     return d[.leading] - 9
                 }
                 .alignmentGuide(VerticalAlignment.center) { d in
-                    return d[.top] - 17
+                    return d[.top] - 15
                 }
             
             countView
@@ -56,6 +60,7 @@ struct ProfileSUView: View {
                 }
                 .padding(.top, getTopPadding())
         }
+        .background(.gray)
     }
     
     @ViewBuilder
