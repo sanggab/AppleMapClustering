@@ -30,6 +30,7 @@ struct MapViewRepresentable: UIViewRepresentable {
         mapView.showsBuildings = false
         mapView.delegate = context.coordinator
         
+        // 나의 프로필은 클러스털링 될 일은 없지만 viewFor delegate에서 id의 문제로 인해 등록해주어야함
         mapView.register(ProfileAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         mapView.register(ProfileAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultClusterAnnotationViewReuseIdentifier)
         mapView.register(MyProfileAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultClusterAnnotationViewReuseIdentifier)
