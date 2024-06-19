@@ -21,9 +21,9 @@ class MyProfileAnnotationView: MKAnnotationView {
         clusteringIdentifier = "myProfile"
         collisionMode = .circle
         
-        frame = CGRect(x: 0, y: 0, width: 66, height: 66)
-//        bounds.size = CGSize(width: 66, height: 66)
-        centerOffset = CGPoint(x: 33, y: 33)
+//        frame = CGRect(x: 0, y: 0, width: 66, height: 66)
+        bounds.size = CGSize(width: 66, height: 66)
+//        centerOffset = CGPoint(x: 33, y: 33)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -39,11 +39,19 @@ class MyProfileAnnotationView: MKAnnotationView {
             
             if let person = annotations.first as? Person {
                 let vc: UIHostingController = UIHostingController(rootView: MyProfileSUIView(imageUrl: person.url))
+                
+                vc.view.frame = bounds
+                vc.view.backgroundColor = .clear
+                
                 self.addSubview(vc.view)
             }
         } else {
             if let person = annotation as? Person {
                 let vc: UIHostingController = UIHostingController(rootView: MyProfileSUIView(imageUrl: person.url))
+                
+                vc.view.frame = bounds
+                vc.view.backgroundColor = .clear
+                
                 self.addSubview(vc.view)
             }
         }
