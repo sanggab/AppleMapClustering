@@ -36,6 +36,16 @@ struct MapViewRepresentable: UIViewRepresentable {
         mapView.register(MyProfileAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultClusterAnnotationViewReuseIdentifier)
         mapView.register(MyProfileAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         
+        // 최초 실행 시, 내 지역값으로 region 설정 / 50배 줌
+        if let coordinate = CLLocationManager().location?.coordinate {
+            mapView.region = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 50, longitudeDelta: 50))
+        }
+        
+        // 카메라 max, min 제한 추가
+        mapView.cameraZoomRange = MKMapView.CameraZoomRange(
+                    minCenterCoordinateDistance: 4500,
+                    maxCenterCoordinateDistance: 15000000)
+        
 //        guard let plistURL = Bundle.main.url(forResource: "Data", withExtension: "plist") else {
 //            fatalError("Failed to resolve URL for `Data.plist` in bundle.")
 //        }
