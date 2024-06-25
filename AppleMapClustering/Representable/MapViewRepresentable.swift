@@ -64,7 +64,36 @@ struct MapViewRepresentable: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
+        let profileList = mapView.annotations.lazy.compactMap{ $0 as? Person }
         
+        if let myProfileAnnotation = profileList.first(where: { $0.memNo == -100 }),
+           let firstAnnotation = mapView.selectedAnnotations.first,
+           let selectedView = mapView.view(for: firstAnnotation),
+           let myView = mapView.view(for: myProfileAnnotation) {
+          
+            let myPoint = myView.frame.origin
+            let selectedPoint = selectedView.frame.origin
+            
+            print("상갑 myPoint : \(myPoint)")
+            print("상갑 selectedPoint : \(selectedPoint)")
+            
+            let xCondition = abs(myPoint.x - selectedPoint.x) >= 70
+            let yCondition = abs(myPoint.y - selectedPoint.y) >= 70
+            
+            if xCondition || yCondition {
+                mapView.selectedAnnotations.forEach {
+                    mapView.deselectAnnotation($0, animated: false)
+                }
+            } else {
+                print("상갑 내 프로필이랑 위치 겹쳐서 deselect 금지")
+            }
+            
+            
+        } else {
+            mapView.selectedAnnotations.forEach {
+                mapView.deselectAnnotation($0, animated: false)
+            }
+        }
     }
     
     func makeCoordinator() -> MapViewCoordinator {
