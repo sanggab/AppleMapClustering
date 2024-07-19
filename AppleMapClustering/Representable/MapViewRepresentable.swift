@@ -38,10 +38,13 @@ struct MapViewRepresentable: UIViewRepresentable {
         
         // 최초 실행 시, 내 지역값으로 region 설정 / 50배 줌
         if let coordinate = CLLocationManager().location?.coordinate {
-            mapView.region = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 50, longitudeDelta: 50))
+            // span은 키로미터
+            // 그러면 span의 1000분의 1이 줌 레인지?
+            mapView.region = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
         }
         
         // 카메라 max, min 제한 추가
+        // 미터
         mapView.cameraZoomRange = MKMapView.CameraZoomRange(
                     minCenterCoordinateDistance: 4500,
                     maxCenterCoordinateDistance: 15000000)
