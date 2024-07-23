@@ -162,8 +162,32 @@ struct MapViewRepresentable: UIViewRepresentable {
         }
         
         func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-            print("altitude : \(mapView.camera.altitude)")
+            print("altitude : \(mapView.camera.centerCoordinateDistance)")
             print("centerCoordinateDistance : \(mapView.camera.centerCoordinateDistance)")
+            getMapData(mapView: mapView)
+        }
+        
+        
+        func getMapData(mapView: MKMapView) {
+            let mapRect = mapView.visibleMapRect
+                        let northWestPoint = MKMapPoint(x: mapRect.origin.x, y: mapRect.origin.y)
+                        let southEastPoint = MKMapPoint(x: mapRect.maxX, y: mapRect.maxY)
+                        
+                        let northWestCoordinate = northWestPoint.coordinate
+                        let southEastCoordinate = southEastPoint.coordinate
+                        
+                        print("North West: \(northWestCoordinate.latitude), \(northWestCoordinate.longitude)")
+                        print("South East: \(southEastCoordinate.latitude), \(southEastCoordinate.longitude)")
+                        
+                        // 최소 및 최대 위도/경도
+                        let minLatitude = min(northWestCoordinate.latitude, southEastCoordinate.latitude)
+                        let maxLatitude = max(northWestCoordinate.latitude, southEastCoordinate.latitude)
+                        let minLongitude = min(northWestCoordinate.longitude, southEastCoordinate.longitude)
+                        let maxLongitude = max(northWestCoordinate.longitude, southEastCoordinate.longitude)
+                        
+                        print("Min Latitude: \(minLatitude), Max Latitude: \(maxLatitude)")
+                        print("Min Longitude: \(minLongitude), Max Longitude: \(maxLongitude)")
+                    
         }
     }
 }
